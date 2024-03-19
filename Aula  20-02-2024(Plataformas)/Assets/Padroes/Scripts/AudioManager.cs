@@ -22,4 +22,19 @@ public class AudioManager : MonoBehaviour
         }
        
     }
+
+    private void OnEnable()
+    {
+        AudioObserverManager.OnVolumeChanged += ProcessVolumeChanged;
+    }
+    private void ProcessVolumeChanged(float value)
+    {
+        volume = value;   
+    }
+
+    private void OnDisable()
+    {
+        AudioObserverManager.OnVolumeChanged -= ProcessVolumeChanged;
+    }
+
 }

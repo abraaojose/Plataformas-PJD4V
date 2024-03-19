@@ -12,8 +12,8 @@ public class VolumeBarController : MonoBehaviour
 	{
 		volumeSlider.onValueChanged.AddListener(VolumeSliderChanged);
 	}
-	private void VolumeSliderChanged(float arg0)
+	private void VolumeSliderChanged(float volume)
 	{
-		
+		AudioObserverManager.VolumeChanged(volume);
 	}
 }
